@@ -27,6 +27,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 autocmd vimenter * colorscheme gruvbox
+set background=dark
 
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
