@@ -1,13 +1,13 @@
+syntax on
+filetype off
+
 set number
-set nocompatible              " be iMproved, required
+set nocompatible
 set hidden
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
-
-filetype off                  " required
-syntax on
 
 call plug#begin('~/.vim/plugged')
 
