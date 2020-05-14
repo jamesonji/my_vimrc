@@ -9,27 +9,18 @@ set expandtab
 filetype off                  " required
 syntax on
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'frazrepo/vim-rainbow'
-Plugin 'morhetz/gruvbox'
-Plugin 'preservim/nerdtree'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'peitalin/vim-jsx-typescript'
+Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
 
-autocmd vimenter * colorscheme gruvbox
+colorscheme gruvbox
 set background=dark
 
-autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
