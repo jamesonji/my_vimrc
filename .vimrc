@@ -1,7 +1,7 @@
 syntax on
 filetype off
 
-set number
+set number relativenumber
 set nocompatible
 set hidden
 set noerrorbells
@@ -25,6 +25,13 @@ set background=dark
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+
+" Automatic toggling between line number modes when switching windows.
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 let mapleader = " "
 nnoremap <leader>h :wincmd h<CR>
