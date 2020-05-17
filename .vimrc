@@ -8,6 +8,9 @@ set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
+set nobackup
+set nowb
+set noswapfile
 
 call plug#begin('~/.vim/plugged')
 
@@ -41,4 +44,4 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
 
-map <C-o> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
